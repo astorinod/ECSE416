@@ -32,7 +32,7 @@ port = int(arguments[1])
 filename = arguments[2]
 
 try:
-    timeout = arguments[3]
+    timeout = int(arguments[3])
 except:
     timeout = 5
 
