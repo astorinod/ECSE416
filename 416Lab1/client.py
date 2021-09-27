@@ -1,6 +1,6 @@
 '''
 ECSE 416: Telecommunication Networks
-Experiment 1: A basic Web Sever
+Experiment 1: A basic Web Server
 -------------------------------------
 Group 6
 Daniel Astorino 260799820
@@ -10,7 +10,7 @@ Lillian Chiu 260804336
 
 
 try:
-    import socket
+    import socket #library to create socket
 except:
     print("[ERROR] Missing required extension (socket)")
 
@@ -30,6 +30,7 @@ arguments = sys.argv
 host = '127.0.0.1'
 port = int(arguments[1])
 filename = arguments[2]
+# command line arguments start at 0
 
 try:
     timeout = int(arguments[3])
@@ -44,6 +45,8 @@ deleteFile = False
 #Lab Requirement (ii): Client establishes a socket connection to the server
 #with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#socket.AF_INET for IPv4
+#socket.SOCK_STREAM for TCP
 s.settimeout(timeout)
 s.connect((host, port))
 print("Connection: OK")

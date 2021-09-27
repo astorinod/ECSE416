@@ -1,14 +1,16 @@
 '''
 ECSE 416: Telecommunication Networks
-Experiment 1: A basic Web Sever
+Experiment 1: A basic Web Server
 -------------------------------------
 Group 6
 Daniel Astorino 260799820
 Lillian Chiu 260804336
 '''
 # ---------------------------- IMPORTS -----------------------------------------
+
+
 try:
-    import socket
+    import socket #library to create socket
 except:
     print("[ERROR] Missing required extension (socket)")
 
@@ -26,7 +28,9 @@ except:
 # ---------------------------- ARGUMENTS -----------------------------------------
 arguments =  sys.argv
 host = '127.0.0.1' #localhost
-port = arguments[1]      
+port = int(arguments[1])
+# command line arguments start at 0
+
 exists = True
 
 
@@ -40,7 +44,8 @@ conn, addr = s.accept()         #connection is established
 print("Connection: OK")
 
 
-with (conn):
+with (conn): # dont need to manually close the socket
+# will close the socket when the program stops running (ex: if theres an error)
     
     #Lab Requirement (iii): Server receives an HTTP request from this connection 
     dataPacket = conn.recv(1024)
