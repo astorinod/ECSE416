@@ -28,7 +28,7 @@ except:
 # ---------------------------- ARGUMENTS -----------------------------------------
 arguments =  sys.argv
 host = '127.0.0.1' #localhost
-port = arguments[1]
+port = int(arguments[1])
 # command line arguments start at 0
 
 exists = True
